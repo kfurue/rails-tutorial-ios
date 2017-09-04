@@ -15,6 +15,8 @@
 		B936701C1F4F0497006C270F /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B93670151F4F0497006C270F /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B936701D1F4F0497006C270F /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93670161F4F0497006C270F /* RxTest.framework */; };
 		B936701E1F4F0497006C270F /* RxTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B93670161F4F0497006C270F /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B97B62941F5AF874007E9E0F /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B62931F5AF874007E9E0F /* UserTests.swift */; };
+		B97B62981F5AFAC5007E9E0F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B62971F5AFAC5007E9E0F /* User.swift */; };
 		B9BEF2FA1F48A40200471BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF2F91F48A40200471BB4 /* AppDelegate.swift */; };
 		B9BEF2FC1F48A40200471BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF2FB1F48A40200471BB4 /* ViewController.swift */; };
 		B9BEF2FF1F48A40200471BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF2FD1F48A40200471BB4 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		B93670141F4F0497006C270F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		B93670151F4F0497006C270F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		B93670161F4F0497006C270F /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		B97B62931F5AF874007E9E0F /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		B97B62971F5AFAC5007E9E0F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B9BEF2F61F48A40200471BB4 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BEF2F91F48A40200471BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9BEF2FB1F48A40200471BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B97B62961F5AFAB2007E9E0F /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				B97B62971F5AFAC5007E9E0F /* User.swift */,
+			);
+			path = Users;
+			sourceTree = SOURCE_ROOT;
+		};
 		B9BEF2ED1F48A40200471BB4 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +158,7 @@
 		B9BEF2F81F48A40200471BB4 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				B97B62961F5AFAB2007E9E0F /* Users */,
 				B9BEF2F91F48A40200471BB4 /* AppDelegate.swift */,
 				B9BEF2FB1F48A40200471BB4 /* ViewController.swift */,
 				B9BEF2FD1F48A40200471BB4 /* Main.storyboard */,
@@ -161,6 +174,7 @@
 			children = (
 				B9BEF30E1F48A40200471BB4 /* SampleAppTests.swift */,
 				B9BEF3101F48A40200471BB4 /* Info.plist */,
+				B97B62931F5AF874007E9E0F /* UserTests.swift */,
 			);
 			path = SampleAppTests;
 			sourceTree = "<group>";
@@ -312,6 +326,7 @@
 			files = (
 				B9BEF2FC1F48A40200471BB4 /* ViewController.swift in Sources */,
 				B9BEF2FA1F48A40200471BB4 /* AppDelegate.swift in Sources */,
+				B97B62981F5AFAC5007E9E0F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97B62941F5AF874007E9E0F /* UserTests.swift in Sources */,
 				B9BEF30F1F48A40200471BB4 /* SampleAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
