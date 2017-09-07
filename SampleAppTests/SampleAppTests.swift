@@ -13,24 +13,25 @@ class SampleAppTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        SampleAppClientAPI.customHeaders["Authorization"]
+            = "Bearer 4c80d22739c848bd1e95ff1e8f38c562e72570255fe465ca61779ae4f5bed47d"
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    func testSwagger() {
+        let getMicropostsExpectation = expectation(description: "Get Microposts")
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        FeedAPI.getApiV1Feed { (microposts, error) in
+            print(microposts?.count ?? "nil microposts")
+            if let microposts = microposts {
+                for micropost in microposts {
+                    print(micropost.userId ?? "nil userId")
+                    print(micropost.content ?? "nil content")
+                }
+            }
+            print(error ?? "nil error")
+            getMicropostsExpectation.fulfill()
         }
+        waitForExpectations(timeout: 15.0, handler: nil)
     }
 
 }
