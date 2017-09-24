@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     private func configureObserver() {
         SampleAppClientAPI.customHeaders["Authorization"]
-            = "Bearer 9fa9995a17c5849083890b3ee0ef5fbd3fe1b93036b16eefe1149ac34387cc0d"
+            = "Bearer a9b1a180b7d25c7075eb72f78509ece5a6b75e7082b4f4d3bf05553db2e0fdec"
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 

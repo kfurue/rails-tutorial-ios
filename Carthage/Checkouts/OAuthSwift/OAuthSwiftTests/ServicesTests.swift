@@ -64,11 +64,11 @@ class ServicesTests: XCTestCase {
         }
     }
     
-    func _testDropBox() {
+    func testDropBox() {
         testService("Dropbox")
     }
     
-    func _testBitBucket() {
+    func testBitBucket() {
         testService("BitBucket")
     }
     
@@ -199,7 +199,6 @@ class ServicesURLHandlerType: LayoutEngineNavigationDelegate, OAuthSwiftURLHandl
         browser = Erik(webView: webView)
         super.init()
         webView.navigationDelegate = self
-        (browser.layoutEngine as? WebKitLayoutEngine)?.navigable = self
         
         guard let _ = self.serviceParameters["form_username_selector"],
             let _ = self.serviceParameters["form_password_selector"],
@@ -308,7 +307,7 @@ class ServicesURLHandlerType: LayoutEngineNavigationDelegate, OAuthSwiftURLHandl
                 }
             }
             else {
-                XCTFail("\(self.service): Cannot handle \(url) \(error)")
+                XCTFail("\(self.service): Cannot handle \(url) \(String(describing: error))")
             }
         }
     }
@@ -320,10 +319,10 @@ class ServicesURLHandlerType: LayoutEngineNavigationDelegate, OAuthSwiftURLHandl
                 button.click()
             } else {
                 print(doc.toHTML ?? "ERROR: no HTML doc")
-                XCTFail("\(self.service): \(autorizeButton) not found to valid authentification]. \(self.browser.url)")
+                XCTFail("\(self.service): \(autorizeButton) not found to valid authentification]. \(String(describing: self.browser.url))")
             }
         } else if !self.handled {
-            XCTFail("\(self.service): No [authorize_button_selector) to valid authentification]. \(self.browser.url)")
+            XCTFail("\(self.service): No [authorize_button_selector) to valid authentification]. \(String(describing: self.browser.url))")
         }
     }
     

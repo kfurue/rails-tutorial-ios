@@ -26,7 +26,6 @@
 		B9610BD81F6044A80033BDCB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9610BCB1F6044A80033BDCB /* Models.swift */; };
 		B9610BDB1F62D3B80033BDCB /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9610BDA1F62D3B80033BDCB /* UserView.swift */; };
 		B9610BDF1F62DC910033BDCB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93670131F4F0497006C270F /* RxBlocking.framework */; };
-		B9610BE01F62DC910033BDCB /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93670161F4F0497006C270F /* RxTest.framework */; };
 		B9BEF2FA1F48A40200471BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF2F91F48A40200471BB4 /* AppDelegate.swift */; };
 		B9BEF2FC1F48A40200471BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF2FB1F48A40200471BB4 /* ViewController.swift */; };
 		B9BEF2FF1F48A40200471BB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF2FD1F48A40200471BB4 /* Main.storyboard */; };
@@ -38,6 +37,7 @@
 		B9BEF3291F48AC0600471BB4 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9BEF3271F48AC0500471BB4 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B9BEF32C1F48F47500471BB4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BEF32B1F48F47500471BB4 /* Alamofire.framework */; };
 		B9BEF32D1F48F47500471BB4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9BEF32B1F48F47500471BB4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9ED06B71F77DEDD00C59BDC /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93670161F4F0497006C270F /* RxTest.framework */; };
 		B9F85DBC1F6021FA00B33A5A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F85DBB1F6021FA00B33A5A /* UserViewModel.swift */; };
 		B9F85DBE1F6023EB00B33A5A /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F85DBD1F6023EB00B33A5A /* UserViewModelTests.swift */; };
 /* End PBXBuildFile section */
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9610BE01F62DC910033BDCB /* RxTest.framework in Frameworks */,
+				B9ED06B71F77DEDD00C59BDC /* RxTest.framework in Frameworks */,
 				B9610BDF1F62DC910033BDCB /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +302,7 @@
 				B9BEF3061F48A40200471BB4 /* Sources */,
 				B9BEF3071F48A40200471BB4 /* Frameworks */,
 				B9BEF3081F48A40200471BB4 /* Resources */,
+				B9ED06B81F77E3D900C59BDC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -404,6 +405,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9ED06B81F77E3D900C59BDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxTest.framework",
+				"$(DERIVED_FILE_DIR)/$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxBlocking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9BEF2F21F48A40200471BB4 /* Sources */ = {
