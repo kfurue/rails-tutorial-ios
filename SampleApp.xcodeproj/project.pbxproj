@@ -285,6 +285,7 @@
 				B9BEF2F31F48A40200471BB4 /* Frameworks */,
 				B9BEF2F41F48A40200471BB4 /* Resources */,
 				B9BEF32A1F48AC0600471BB4 /* Embed Frameworks */,
+				B94304B31F794DAE004C3624 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -407,6 +408,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B94304B31F794DAE004C3624 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OAuthSwift.framework",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxSwift.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/Alamofire.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/OAuthSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		B9ED06B81F77E3D900C59BDC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
